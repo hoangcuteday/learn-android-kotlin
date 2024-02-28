@@ -3,4 +3,7 @@
     <string name="quizz_app">Quizz App</string>
     <string name="welcome">Welcome</string>
     <string name="name">Name</string>
+    <string name="image_flag">Image Flag</string>
+    <string name="check">Check</string>
+    <string name="result">Result</string>
 </resources>
