@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,6 +24,14 @@ class MainActivity : AppCompatActivity() {
             }else {
                 binding.textView.text = binding.editTextText.text.toString();
                 binding.textView.setTextColor(ContextCompat.getColor(this, R.color.black))
+            }
+        }
+
+        with(binding.button4) {
+            setOnClickListener {
+                Intent(this@MainActivity, SharedPreferences::class.java).also {
+                    startActivity(it)
+                }
             }
         }
     }
