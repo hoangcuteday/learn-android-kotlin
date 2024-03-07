@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,14 @@ class MainActivity : AppCompatActivity() {
             android.R.layout.simple_list_item_1,
             mutableList
         )
+
+        with(binding.buttonRecycler) {
+            setOnClickListener {
+                Intent(this@MainActivity, RecyclerView::class.java).also {
+                    startActivity(it)
+                }
+            }
+        }
 
         binding.button.setOnClickListener {
             mutableList.add(binding.edit.text.toString())
