@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.RecyclerRowBinding
 
-class Adapter(val ds: List<Data>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(val ds: List<Data>, var clickText: Onclick) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     class ViewHolder(val binding : RecyclerRowBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -24,6 +24,9 @@ class Adapter(val ds: List<Data>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
         with(holder.binding) {
             text.text = ds[position].text
             button.text = ds[position].textButton
+            button.setOnClickListener {
+                clickText.setOnClick(ds[position].text)
+            }
         }
     }
 }
